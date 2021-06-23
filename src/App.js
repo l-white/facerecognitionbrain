@@ -5,6 +5,13 @@ import Navigation from './components/navigation/Navigation';
 import Logo from './components/logo/Logo';
 import Rank from './components/rank/Rank';
 import ImageLinkForm from './components/imageLinkForm/ImageLinkForm';
+// api key: 174fc346c4e0464ba9c80ea8cb9265aa
+
+/*
+const app = new Clarifai.Api({
+  apiKey: '174fc346c4e0464ba9c80ea8cb9265aa',
+});
+*/
 
 const particlesOptions = {
   particles: {
