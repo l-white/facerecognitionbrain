@@ -9,7 +9,7 @@ import './App.css';
 // api key: 174fc346c4e0464ba9c80ea8cb9265aa
 
 
-const app = new Clarifai.Api({
+const app = new Clarifai.App({
   apiKey: '174fc346c4e0464ba9c80ea8cb9265aa',
 });
 
@@ -47,9 +47,10 @@ class App extends Component {
 
   onButtonSubmit = () => {
     console.log('click');
-    app.models.predict({id:'MODEL_ID', version:'MODEL_VERSION_ID'}, "https://samples.clarifai.com/metro-north.jpg").then(
+    app.models.predict(Clarifai.FACE_DETECT_MODEL, 
+      "https://samples.clarifai.com/metro-north.jpg").then(
   function(response) {
-    // do something with response
+    console.log(response);
   },
   function(err) {
     // there was an error
