@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-import './App.css';
+import Clarifai from 'clarifai';
 import Navigation from './components/navigation/Navigation';
 import Logo from './components/logo/Logo';
 import Rank from './components/rank/Rank';
 import ImageLinkForm from './components/imageLinkForm/ImageLinkForm';
+import './App.css';
 // api key: 174fc346c4e0464ba9c80ea8cb9265aa
 
-/*
+
 const app = new Clarifai.Api({
   apiKey: '174fc346c4e0464ba9c80ea8cb9265aa',
 });
-*/
 
 const particlesOptions = {
   particles: {
@@ -47,6 +47,14 @@ class App extends Component {
 
   onButtonSubmit = () => {
     console.log('click');
+    app.models.predict({id:'MODEL_ID', version:'MODEL_VERSION_ID'}, "https://samples.clarifai.com/metro-north.jpg").then(
+  function(response) {
+    // do something with response
+  },
+  function(err) {
+    // there was an error
+  }
+);
   }
 
   render () {
