@@ -39,9 +39,16 @@ class App extends Component {
 
   onButtonSubmit = () => {
     console.log('click');
+<<<<<<< HEAD
     app.models.predict(Clarifai.FACE_DETECT_MODEL, "https://samples.clarifai.com/metro-north.jpg").then(
+||||||| merged common ancestors
+    app.models.predict({id:'MODEL_ID', version:'MODEL_VERSION_ID'}, "https://samples.clarifai.com/metro-north.jpg").then(
+=======
+    app.models.predict(Clarifai.FACE_DETECT_MODEL, 
+      "https://samples.clarifai.com/metro-north.jpg").then(
+>>>>>>> 665271736d374bc917a455846fed51e0a9654b7d
   function(response) {
-    // do something with response
+    console.log(response);
   },
   function(err) {
     // there was an error
