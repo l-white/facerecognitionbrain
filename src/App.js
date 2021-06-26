@@ -46,6 +46,7 @@ class App extends Component {
   },
   function(err) {
     // there was an error
+    console.log(err);
   }
 );
   }
