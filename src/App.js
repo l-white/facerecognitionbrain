@@ -11,7 +11,7 @@ import ImageLinkForm from './components/imageLinkForm/ImageLinkForm';
 import './App.css';
 
 const app = new Clarifai.App({
-  apiKey: '174fc346c4e0464ba9c80ea8cb9265aa'
+  apiKey: ''
 });
 
 const particlesOptions = {
