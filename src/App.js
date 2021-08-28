@@ -119,7 +119,10 @@ onRouteChange = (route) => {
         { route === 'home' 
           ? <>
               <Logo />
-              <Rank />
+              <Rank 
+                name = {this.state.user.name}
+                entries = {this.state.user.entries}
+              />
               <ImageLinkForm 
                 onInputChange={this.onInputChange} 
                 onButtonSubmit={this.onButtonSubmit}/>
@@ -129,18 +132,23 @@ onRouteChange = (route) => {
               />
             </>
           : (
-            this.state.route === 'signin'
-            ? <SignIn onRouteChange={this.onRouteChange}/>
+            route === 'signin'
+            ? <SignIn loadUser={this.loadUser}
+            onRouteChange={this.onRouteChange}/>
             : <Register 
               loadUser={this.loadUser}
               onRouteChange={this.onRouteChange}/>
           )
-        }
-        
-        
+        }        
       </div>
     );
   }
 }
+
+/*/*this.state.route === 'signin'
+        ? <SignIn onRouteChange={this.onRouteChange}/>
+        : <Register 
+          loadUser={this.loadUser}
+          onRouteChange={this.onRouteChange}/>*/
 
 export default App;
