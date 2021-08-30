@@ -11,7 +11,7 @@ import ImageLinkForm from './components/imageLinkForm/ImageLinkForm';
 import './App.css';
 
 const app = new Clarifai.App({
-  apiKey: ''
+  apiKey: '174fc346c4e0464ba9c80ea8cb9265aa'
 });
 
 const particlesOptions = {
@@ -25,11 +25,9 @@ const particlesOptions = {
     }
   }
 };
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      input: '',
+
+const initialState = {
+  input: '',
       imageUrl: '',
       box: {},
       route: 'signin',
@@ -40,8 +38,13 @@ class App extends Component {
         email: '',
         entries: 0,
         joined: ''
-      }
-    }
+      } 
+}
+
+class App extends Component {
+  constructor(){
+    super();
+    this.state = initialState;
   }
 
   loadUser = (data) => {
@@ -101,7 +104,7 @@ class App extends Component {
 
 onRouteChange = (route) => {
   if (route === 'signout') {
-    this.setState({isSignedIn: false})
+    this.setState(initialState)
   } else if (route === 'home') {
     this.setState({isSignedIn: true})
   }
