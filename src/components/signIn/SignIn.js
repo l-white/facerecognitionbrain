@@ -32,11 +32,6 @@ class SignIn extends React.Component {
         this.props.onRouteChange('home');
       }
     })
-    /*.then(data => {
-      if (data === 'successful login'){
-        this.props.onRouteChange('home');
-      }
-    }*/
   }
   render(){
     const {onRouteChange} = this.props;
